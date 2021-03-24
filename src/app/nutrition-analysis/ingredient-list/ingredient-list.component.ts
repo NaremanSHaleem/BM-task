@@ -30,6 +30,7 @@ export class IngredientListComponent implements OnInit {
     'K',
   ];
   totalNutrients;
+  
   constructor(
     private ingredientService: IngredientService,
     private analyseService: AnalyseService,
@@ -43,6 +44,12 @@ export class IngredientListComponent implements OnInit {
       this.router.navigateByUrl('');
     } else { this.mapIngredients(); }
   }
+
+  ngAfterViewChecked() {   
+    if(this.showResult == true){
+      this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });        
+    }
+}
 
   mapIngredients() {
     for (let index = 0; index < this.ingredientsObj.length; index++) {
@@ -66,9 +73,6 @@ export class IngredientListComponent implements OnInit {
         this.result = response;
         this.showResult = true;
         this.totalNutrients = this.mapResults();
-        setTimeout(() => {
-          this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });
-        }, 100);
       },
       error => { alert(error) }
     );
