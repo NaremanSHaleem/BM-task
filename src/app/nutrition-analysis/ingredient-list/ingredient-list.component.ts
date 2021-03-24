@@ -29,7 +29,7 @@ export class IngredientListComponent implements OnInit {
     'K',
   ];
   totalNutrients;
-
+  loading = false;
   constructor(
     private ingredientService: IngredientService,
     private analyseService: AnalyseService,
@@ -66,8 +66,10 @@ export class IngredientListComponent implements OnInit {
   }
 
   async getTotalNutrition() {
+    this.loading = true;
     await this.analyseService.analyse(this.ingredientsObj).subscribe(
       response => {
+        this.loading = false;
         this.ingredientService.setResult(response);
         this.result = response;
         this.showResult = true;

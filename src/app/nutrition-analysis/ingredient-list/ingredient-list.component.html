@@ -17,7 +17,9 @@
   </tbody>
 </table>
 <div class="d-flex justify-content-end mb-5">
-  <button type="submit" class="btn btn-success" (click)="getTotalNutrition()">Total Nutrition</button>
+  <button type="submit" class="btn btn-success" (click)="getTotalNutrition()">Total Nutrition <div *ngIf="loading" class="spinner-border spinner-border-sm text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div></button>
 </div>
 
 <!-- Result -->
