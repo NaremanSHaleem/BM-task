@@ -44,11 +44,11 @@ export class IngredientListComponent implements OnInit {
     } else { this.mapIngredients(); }
   }
 
-  ngAfterViewChecked() {   
-    if(this.showResult == true){
-      this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });        
+  ngAfterViewChecked() {
+    if (this.showResult == true) {
+      this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });
     }
-}
+  }
 
   mapIngredients() {
     for (let index = 0; index < this.ingredientsObj.length; index++) {

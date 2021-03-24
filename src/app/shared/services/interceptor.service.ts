@@ -9,6 +9,7 @@ import {
 } from '@angular/common/http';
 
 import { Observable } from "rxjs";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const modified = req.clone({
       setHeaders: { 'content-type': 'application/json' },
-      params: req.params.set('app_id', 'a887f07e').set('app_key', '1b4d3a1fbed4a9ca2107ff520b5a8368')
+      params: req.params.set('app_id', environment.app_id).set('app_key', environment.app_key)
     });
     return next.handle(modified);
   }

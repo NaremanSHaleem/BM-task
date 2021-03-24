@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://api.edamam.com/api'  
+  baseUrl: 'https://api.edamam.com/api',
+  app_id: 'a887f07e',
+  app_key: '1b4d3a1fbed4a9ca2107ff520b5a8368'
 };
 
 /*
