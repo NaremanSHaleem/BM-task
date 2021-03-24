@@ -66,12 +66,12 @@ export class IngredientListComponent implements OnInit {
         this.result = response;
         this.showResult = true;
         this.totalNutrients = this.mapResults();
+        setTimeout(() => {
+          this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });
+        }, 100);
       },
       error => { alert(error) }
     );
-    setTimeout(() => {
-      this.resultContainer.nativeElement.scrollIntoView({ behavior: 'smooth', block: "start" });
-    }, 100);
   }
 
   mapResults() {

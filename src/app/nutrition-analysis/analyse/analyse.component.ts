@@ -43,22 +43,8 @@ export class AnalyseComponent implements OnInit {
   async onSubmit() {
     let ing = this.analyseForm.controls.ingredients.value;
     let ingArr = [];
-
-    // let ing = JSON.parse(this.analyseForm.controls.ingredients.value);
     ingArr.push(...ing.split(/\n/g));
     ingArr.forEach(item => { item.replace(/\s/g, "") })
-    console.log(ingArr);
-    // for (let index = 0; index < ing.length; index++) {
-    //   let ingItem = ing[index].split(',');
-    //   ingredientArr.push(
-    //     {
-    //       quantity: ingItem[0],
-    //       foodName: ingItem[1],
-    //       unit: ingItem[2]
-    //     }
-    //   );
-    // }
-    debugger;
     await this.ingredientService.setIngredient(ingArr);
     this.router.navigate(['analysis/ingredients']);
   }
