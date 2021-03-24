@@ -1,0 +1,9 @@
+.nutrition_result{
+    li{
+        display: flex;
+        justify-content: space-between;
+        span{
+            color: rgb(98, 134, 223);
+        }
+    }
+}
