@@ -2,11 +2,11 @@
   <div class="col-md-8">
     <form [formGroup]="analyseForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label mt-5">Enter the ingredients to analyse</label>
+        <label for="ingredients" class="form-label bigger">Enter the ingredients to analyse</label>
+        <h6>Every ingradiant should be like <strong>"quantity<small>(number)</small>  food name, unit"</strong></h6>
         <div>
-          <div>Every ingradiant should be like <strong>"quantity<small>(number)</small>  food name, unit"</strong></div>
         </div>
-        <textarea class="form-control" formControlName="ingredients" id="exampleFormControlTextarea1" rows="15" placeholder="Enter your ingredients here"></textarea>
+        <textarea class="form-control" formControlName="ingredients" id="ingredients" rows="15" placeholder="Enter your ingredients here"></textarea>
       </div>
       <div class="d-flex justify-content-end">
         <button type="submit" class="btn btn-primary"  [disabled]="!analyseForm.valid">Analyse</button>
