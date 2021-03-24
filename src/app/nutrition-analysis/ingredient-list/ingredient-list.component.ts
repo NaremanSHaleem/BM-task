@@ -1,4 +1,3 @@
-import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnalyseService } from 'src/app/shared/services/analyse.service';
@@ -30,7 +29,7 @@ export class IngredientListComponent implements OnInit {
     'K',
   ];
   totalNutrients;
-  
+
   constructor(
     private ingredientService: IngredientService,
     private analyseService: AnalyseService,
